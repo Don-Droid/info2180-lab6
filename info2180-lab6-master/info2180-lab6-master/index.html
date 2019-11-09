@@ -1,10 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang = "en">
     <head>
             <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+            <meta name = "viewport" content = "width = device-width, initial-scale = 1.0" />
+            <meta http-equiv="X-UA-Compatible" content="ie = edge" />
+            <link rel = "stylesheet" href = "./style.css" />
+            <title>Avengers Search</title> <!--Title of webpage-->
     </head>
     <body>
-        <button type="button" id= "button">Search</button>
-        <script src= "app.js"></script>
+        <main>
+            <div class = "header"> <!--The Header section of the main page-->
+                <header>
+                    <div class ="inner"><!--Inner Box in the header-->
+                      <h1>AVENGERS CHARACTER SEARCH</h1>
+                     </div>
+                  </header>
+                  </div>
+                  <div class = "content-container"> <!--The content section-->
+                    <form>
+                    <p>Search by Full Name or Alias</p>
+                    <div class="form-box">
+                    <input type= "text" id= "search" class= "search-field" placeholder="e.g. Captain America or Steve Rogers"> <!--Search Field--> 
+                     <button type="button" id= "button" class= "search-btn">Search</button> <!--The search button-->
+                    </div>
+                    </form> 
+                    <div class= "result"> <!--The Result Section-->
+                        <h2>RESULT</h2>
+                    </div>
+                    <hr>
+                    <div id="result">
+                    </div>
+                    
+                 </div>
+        <script src= "app.js"></script> <!--link to Javascript file-->
+        </main>
     </body>
 </html>

@@ -1,4 +1,8 @@
+<?php error_reporting (E_ALL ^ E_NOTICE); ?>
 <?php
+header("Access-Control-Allow-Origin:*");
+
+
 
 $superheroes = [
   [
@@ -62,11 +66,36 @@ $superheroes = [
       "biography" => "Notably powerful, Wanda Maximoff has fought both against and with the Avengers, attempting to hone her abilities and do what she believes is right to help the world.",
   ], 
 ];
+?>
+<?php $input = $_GET["query"]?>
+<?php $state ="";?>
 
+<?php if($input === ""){
+    notext($superheroes,$superhero);
+}else{
+    foreach ($superheroes as $superhero):
+        if($input === $superhero["alias"] || $input ===$superhero["name"] ){?>
+            <?php $state = "found"?>
+            <br>
+            <h3><?= $superhero["alias"];?></h3>
+            <h4>A.K.A <?= $superhero["name"];?></h4>
+            <br>
+            <p><?= $superhero["biography"];?></p>
+        <?php }
+    endforeach;
+}if ($input !== "" && $state !== "found") { ?>
+    <br>
+    <h3 style="color: red;">SUPERHERO NOT FOUND</h3>
+    
+<?php } 
 ?>
 
-<ul>
-<?php foreach ($superheroes as $superhero): ?>
-  <li><?= $superhero['alias']; ?></li>
-<?php endforeach; ?>
-</ul>
+<?php function notext($s,$p){?>
+    <ul>
+    <?php foreach ($s as $p): ?>    
+        <li><?= $p['alias']; ?></li>
+     <?php endforeach; ?>    
+    </ul>
+<?php } ?>
+
+    
